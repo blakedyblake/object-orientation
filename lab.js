@@ -138,6 +138,19 @@ console.log(cat.name);
 */
 
 //Code here
+let Wizard = {
+  constructor(name, age, favoriteSpell){
+    this.name = name;
+    this.age = age;
+    this.favoriteSpell = favoriteSpell;
+  }
+  castSpell(){
+    console.log(`${name} has cast ${favoriteSpell}`)
+  }
+}
+
+let will = new Wizard("Will the Wise", 68, "Fireball")
+will.castSpell();
 
 //////////////////////////// PROBLEM 10 ////////////////////////////
 /*
