@@ -41,7 +41,7 @@ console.log(dog.name)
 
 //Code here
 
-
+console.log(dog['color'])
 
 //////////////////////////// PROBLEM 5 ////////////////////////////
 /*
@@ -50,7 +50,14 @@ console.log(dog.name)
 */
 
 //Code here
-
+const favoriteThings = {
+  band : "Twenty-one pilots",
+  food : "Whatchamacallit",
+  person : "вова",
+  book : "The Way of Kings",
+  movie : "Made in Abyss 3",
+  holiday : "New Years"
+}
 
 /*
   After you've made your object, use bracket or dot notation to add another key named 'car' with the value being your favorite car and then another key named 'brand' with the value being your favorite brand.
@@ -58,14 +65,16 @@ console.log(dog.name)
 
 //Code here
 
-
+favoriteThings.car = "Toyota"
+favoriteThings.brand = "Samsung"
 /*
   Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
   and change the value of the book key in your favoriteThings object to be 'Harry Potter'.
 */
 
 //Code here
-
+favoriteThings.food = "Chicken Nuggets"
+favoriteThings.book = "Harry Potter"
 
 
 //////////////////////////// PROBLEM 6 ////////////////////////////
@@ -87,6 +96,8 @@ var user = {
 */
 
 //Code Here
+user.name = "Bryan G. Smith"
+user.email = 'bryan.smith@devmounta.in';
 
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
@@ -95,7 +106,8 @@ var user = {
 */
 
 //Code Here
-
+//??Delete Age?
+user.age = undefined;//??
 
 //////////////////////////// PROBLEM 8 ////////////////////////////
 /*
@@ -105,8 +117,17 @@ var user = {
 */
 
 //Code here
+let Cat = {
+  constructor(name, age, color){
+    this.name = name;
+    this.color = color;
+    this.age = age;
+  }
 
+}
 
+cat = new Cat("Koby", 4, "Brown");
+console.log(cat.name);
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
 /*
