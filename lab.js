@@ -107,8 +107,7 @@ user.email = 'bryan.smith@devmounta.in';
 
 //Code Here
 //??Delete Age?
-user.age = undefined;//??
-
+delete user.age;
 //////////////////////////// PROBLEM 8 ////////////////////////////
 /*
   Create a class called 'Cat'. Make sure to call your constructor, and require these 3 parameters: name, age, color.
