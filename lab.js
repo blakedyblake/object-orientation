@@ -117,7 +117,7 @@ user.age = undefined;//??
 */
 
 //Code here
-let Cat = {
+class Cat {
   constructor(name, age, color){
     this.name = name;
     this.color = color;
@@ -138,14 +138,14 @@ console.log(cat.name);
 */
 
 //Code here
-let Wizard = {
+class Wizard {
   constructor(name, age, favoriteSpell){
     this.name = name;
     this.age = age;
     this.favoriteSpell = favoriteSpell;
   }
   castSpell(){
-    console.log(`${name} has cast ${favoriteSpell}`)
+    console.log(`${this.name} has cast ${this.favoriteSpell}`)
   }
 }
 
@@ -176,7 +176,24 @@ will.castSpell();
 */
 
 //Code Here
+class Phone{
+  constructor(brand, model,storage, color, price){
+    this.brand = brand
+    this.model = model
+    this.storage = storage
+    this.color = color
+    this.price = price
+    this.sold = false
+  }
+  sell(){
+    console.log(`${this.brand} ${this.model} has been sold.`)
+    this.sold = true;
 
+  }
+  changePrice(newPrice){
+    this.price = newPrice;
+  }
+}
   
 /*
     Next make three new phone instances using your class.
@@ -189,6 +206,10 @@ will.castSpell();
 */
 
 //Code Here
+phoneX = new Phone("Apple", "9a", 5, "Black", 1000)
+phoneY = new Phone("Samsung", "A20", 20, "blue", 400)
+phoneZ = new Phone("Nokia", "3", 3, "red", 200)
+
 
 /* 
   Call the changePrice function on one of your phones, 
@@ -198,6 +219,8 @@ will.castSpell();
 */ 
 
 //Code Here 
+phoneX.changePrice(800)
+console.log(phoneX.price)
 
 
 /*
@@ -207,6 +230,8 @@ will.castSpell();
 */
 
 //Code Here 
+phoneY.sell();
+console.log(phoneY.sold)
 
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
@@ -227,7 +252,10 @@ const colors = {
 
 //Code Here 
 
-
+let colorsCopy = {
+  ...colors
+}
+console.log(colorsCopy)
 
 /*
  Now use the spread operator to combine the following 2 objects into one. 
@@ -254,7 +282,10 @@ const shippingInfo = {
 //do not edit the objects above
 
 //Code Here
-
+let helensInfo = {
+  ...contactInfo,
+  ...shippingInfo
+}
 
 //Print helensInfo to see what it looks like, there should be no repeating properties.
 
@@ -272,14 +303,24 @@ const shippingInfo = {
 */
 
 //Code Here 
-
+class Vehicle {
+  constructor(capacity, color, mileage){
+    this.capacity = capacity;
+    this.color = color
+    this.mileage = mileage
+  }
+  move(miles){
+    this.mileage += miles
+    console.log(`${this.mileage} miles`)
+  }
+}
 
 /*
   Create a vehicle using your new class and save it to a variable called myFirstVehicle
 */
 
 //Code Here
-
+let myFirstVehicle = new Vehicle(5, "brown", 2000)
 
 /* 
   Now we'll create a class that's based off of the vehicle class. 
@@ -292,16 +333,25 @@ const shippingInfo = {
 
 //Code Here
 
+class Motorcycle extends Vehicle{
+  constructor(capacity, color, mileage, isCool, make){
+    super(capacity,color,mileage);
+    this.isCool = isCool
+    this.make = make
+  }
+}
+
 /*
   Create a Motorcycle using your new class and save it to a variable called myFirstMotorcycle
 */
 
 //Code Here 
+let myFirstMotorcycle = new Motorcycle(2, "black", 200, true, "#2")
 
 /*
   Call the move function on myFirstMotorcycle (don't forget the parameter)
 */
-
+myFirstMotorcycle.move(20);
 /*
   Let's make another class based off of Vehicle. 
 
@@ -318,6 +368,21 @@ const shippingInfo = {
 */
 
 //Code Here
+class Boat extends Vehicle{
+  constructor(capacity, color, mileage, name, type, isSeaworthy){
+    super(capacity, color, mileage)
+    this.name = name;
+    this.type = type;
+    this.isSeaworthy = isSeaworthy;
+  }
+  checkSeaworthiness(){
+    if(this.isSeaworthy) console.log(`The ${this.color} ${this.type} ${this.name} is Seaworthy!`)
+    else console.log(`You need to get your ${this.type} into shape`)
+  }
+  performMaintenance(){
+    this.isSeaworthy = true;
+  }
+}
 
 
 /*
@@ -326,21 +391,23 @@ const shippingInfo = {
 */
 
 //Code Here
-
+let myFirstBoat = new Boat(10, "White", 1000, "Flying Dutchman","Yacht",false)
 /*
   Call the checkSeaworthiness method on your new boat
 */
 
 //Code Here
+myFirstBoat.checkSeaworthiness();
 
 /*
   Now run the performMaintenance method on your boat
 */
 
 //Code Here 
-
+myFirstBoat.performMaintenance();
 /*
   Check the seaworthiness once more (you should be ready for the water!)
 */
 
 //Code Here
+myFirstBoat.checkSeaworthiness();
